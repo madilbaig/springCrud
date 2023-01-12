@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 //@RequestMapping("/product")
@@ -30,7 +31,7 @@ public class ProductController {
     }
 
     @GetMapping("/productById/{id}")
-    public Product findProductById(@PathVariable Integer id){
+    public Optional<Product> findProductById(@PathVariable Integer id){
         return service.retrieveProductById(id);
     }
 
